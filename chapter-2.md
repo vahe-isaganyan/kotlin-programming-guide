@@ -38,6 +38,84 @@ fun main() {
 ```
 `Greet` is a method of the `Person` class. It is called within an instance of `Person` using dot notation. Methods are associated with objects of a class and can access the properties of that object. So the main difference between functions and methods is how they are defined and accessed.
 
---- 
+
+
+#### Method
+
+```kotlin
+class Person(val name: String) {
+    fun greet() {
+        println("Hello, $name!")
+    }
+}
+
+fun main() {
+    val person = Person("Atreus")
+    person.greet()
+}
+```
+`greet` is a method of the `Person` class. It is called within an instance of `Person` using dot notation. Methods are associated with objects of a class and can access the properties of that object. So the main difference between functions and methods is how they are defined and accessed.
+
+### List Indexing
+
+When working with collections, it is important to know the concept of indexing. This refers to the position of elements within a collection. An index is a number value that indicates the position of an element. Indexing allows one to access, modify, and remove elements in lists and arrays.
+
+Indexing starts from 0, and the last index of a collection is the size of the collection minus 1.
+
+#### Accessing Elements
+
+You can access an element in a list by referring to its index.
+
+```kotlin
+val element = shoppingList[index]
+```
+
+For example:
+
+```kotlin
+val shoppingList = listOf("apple", "strawberries", "banana")
+println(myList[1]) // This gives an output of strawberries
+```
+
+### Adding/Removing/Replacing Items to a List
+
+Standard lists are immutable and cannot be changed, so you need to use a mutable list (`MutableList`) in order to modify content.
+
+#### Adding an Item
+
+```kotlin
+val mutableList = mutableListOf("CPU", "GPU", "RAM")
+mutableList.add("date")
+```
+
+#### Removing an Item
+
+```kotlin
+mutableList.remove("RAM")
+mutableList.removeAt(0) // This would remove the "CPU"
+```
+
+#### Replacing an Item
+
+```kotlin
+mutableList[1] = "Power supply" // This replaces the GPU with a power supply.
+```
+
+### The `set` Method
+
+The `set` method is used with mutable lists to replace an item at a specific position or index. The syntax requires you to use two parameters: the index in which the item needs to be replaced and the new value.
+
+```kotlin
+mutableList.set(index, element)
+```
+
+Imagine you have a mutable list of computer parts and you would like to replace one of the parts.
+
+```kotlin
+val mutableList = mutableListOf("AMD 5800x", "RTX 4080", "Seasonic PSU")
+mutableList.set(2, "Corsair PSU") // The Seasonic PSU is replaced
+```
+
+### For Loops
 
 Work in progress
